@@ -8,22 +8,22 @@ def factorize(n):
     """how to get the factor n = p*q"""
     if n % 2 == 0:
         i = 2
-        print("{} = {} * {}".format(n, int(n//i), i))
+        print("{}={}*{}".format(n, int(n//i), i))
 
     else:
         p = int(sqrt(n)) + 1
 
         for i in range(3, p, +2):
             if n % i == 0:
-                print("{} = {} * {}".format(n, int(n//i), i))
+                print("{}={}*{}".format(n, int(n//i), i))
                 return
 
             if n % (p + i) == 0:
-                print("{} = {} * {}".format(n, p + i, int(n//(p + i))))
+                print("{}={}*{}".format(n, p + i, int(n//(p + i))))
                 return
 
             if n % (p - i) == 0:
-                print("{} = {} * {}".format(n, p - 1, int(n//(p - i))))
+                print("{}={}*{}".format(n, p - 1, int(n//(p - i))))
                 return
 
 
