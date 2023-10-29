@@ -1,0 +1,32 @@
+#!/usr/bin/python3
+""" finding the primes given n where n is p*q"""
+from sys import argv
+
+
+def primes():
+    """ finding the primes given n where n is p*q"""
+    try:
+        read_file = argv[1]
+
+        with open(read_file) as file:
+            for n in file:
+                n = int(n)
+
+                if n % 2 == 0:
+                    print("{}={}*{}".format(n, n // 2, 2))
+                    continue
+                i = 3
+                while i < n // 2:
+                    if n % i == 0:
+                        print("{}={}*{}".format(n, n // i, i))
+                        break
+                    i = i + 2
+
+                if i == (n // 2) + 1:
+                    print("{}={}*{}".format(n, n, 1))
+
+    except (IndexError):
+        pass
+
+
+primes()
